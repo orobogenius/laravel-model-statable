@@ -5,6 +5,7 @@
 <a href="https://codecov.io/gh/orobogenius/laravel-model-statable">
   <img src="https://img.shields.io/codecov/c/github/orobogenius/laravel-model-statable.svg?style=flat-square" />
 </a>
+<a href="https://styleci.io/repos/167356410" rel="nofollow"><img src="https://camo.githubusercontent.com/59d352dbd8a27e9c12057c37743c50e6777616fe/68747470733a2f2f7374796c6563692e696f2f7265706f732f3136343239323139362f736869656c64" data-canonical-src="https://styleci.io/repos/164292196/shield" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/orobogenius/laravel-model-statable"><img src="https://img.shields.io/packagist/l/orobogenius/laravel-model-statable.svg?style=flat-square"/></a>
 
 This package lets you add predefined states to your laravel models. This allows you to define states that can be applied to your models at various points in your application.
