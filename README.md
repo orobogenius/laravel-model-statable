@@ -1,5 +1,12 @@
 # Laravel Model Statable
 
+<a href="https://travis-ci.com/orobogenius/laravel-model-statable"><img src="https://img.shields.io/travis/orobogenius/laravel-model-statable/master.svg?style=flat-square"></a>
+<a href="https://packagist.org/packages/orobogenius/laravel-model-statable"><img src="https://poser.pugx.org/orobogenius/laravel-model-statable/v/stable?format=flat-square"/></a>
+<a href="https://codecov.io/gh/orobogenius/laravel-model-statable">
+  <img src="https://img.shields.io/codecov/c/github/orobogenius/laravel-model-statable.svg?style=flat-square" />
+</a>
+<a href="https://packagist.org/packages/orobogenius/laravel-model-statable"><img src="https://img.shields.io/packagist/l/orobogenius/laravel-model-statable.svg?style=flat-square"/></a>
+
 This package lets you add predefined states to your laravel models. This allows you to define states that can be applied to your models at various points in your application.
 You can define all your states in one place and transition your model instances into different states. For example, you may define an
 `admin` state that transforms a user into an admin.
