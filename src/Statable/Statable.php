@@ -13,7 +13,7 @@ trait Statable
     /**
      * Apply the given states to the model.
      *
-     * @param array  $states
+     * @param mixed  $states
      * @return void
     */
     public function states($states)
@@ -26,7 +26,7 @@ trait Statable
     /**
      * Apply the active states to the model.
      *
-     * @param array  $states
+     * @param mixed  $states
      * @param \Illuminate\Database\Eloquent\Relations\Relation  $relation
      * @return void
     */

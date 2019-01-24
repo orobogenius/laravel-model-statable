@@ -16,11 +16,6 @@ class Invoice extends Model
         return $this->hasMany(InvoiceItem::class);
     }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
     public function statePaid()
     {
         return [
