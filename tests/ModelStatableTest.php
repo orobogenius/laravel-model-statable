@@ -2,8 +2,6 @@
 
 namespace Orobogenius\Statable\Tests;
 
-use Mockery as m;
-use Orobogenius\Statable\Statable;
 use Orobogenius\Statable\Tests\Fixtures\User;
 use Orobogenius\Statable\Tests\Fixtures\Invoice;
 use Orobogenius\Statable\Tests\Fixtures\InvoiceItem;
@@ -23,7 +21,7 @@ class ModelStatableTest extends \Orchestra\Testbench\TestCase
         $this->createFixturesMigrations();
     }
 
-    /** @test */    
+    /** @test */
     public function callable_attributes_can_be_expanded()
     {
         $user = new User;
@@ -39,7 +37,7 @@ class ModelStatableTest extends \Orchestra\Testbench\TestCase
     {
         $invoice = new Invoice;
         $invoice->save();
-    
+
         $invoice->items()->saveMany([new InvoiceItem, new InvoiceItem]);
 
         $invoice->states('paid');
@@ -81,7 +79,7 @@ class ModelStatableTest extends \Orchestra\Testbench\TestCase
         $this->assertDatabaseHas('users', [
             'name' => 'Bar',
             'is_admin' => true,
-            'is_moderator' => true
+            'is_moderator' => true,
         ]);
     }
 

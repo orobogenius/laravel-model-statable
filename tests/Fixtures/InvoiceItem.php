@@ -2,8 +2,8 @@
 
 namespace Orobogenius\Statable\Tests\Fixtures;
 
-use Illuminate\Database\Eloquent\Model;
 use Orobogenius\Statable\Statable;
+use Illuminate\Database\Eloquent\Model;
 
 class InvoiceItem extends Model
 {
@@ -19,7 +19,7 @@ class InvoiceItem extends Model
     public function stateProcessed()
     {
         return [
-            'status' => 'processed'
+            'status' => 'processed',
         ];
     }
 }

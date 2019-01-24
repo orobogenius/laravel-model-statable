@@ -2,8 +2,8 @@
 
 namespace Orobogenius\Statable\Tests\Fixtures;
 
-use Illuminate\Database\Eloquent\Model;
 use Orobogenius\Statable\Statable;
+use Illuminate\Database\Eloquent\Model;
 
 class Invoice extends Model
 {
@@ -20,7 +20,7 @@ class Invoice extends Model
     {
         return [
             'status' => 'paid',
-            'with_relations' => ['items' => 'processed']
+            'with_relations' => ['items' => 'processed'],
         ];
     }
 }
