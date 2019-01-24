@@ -3,8 +3,8 @@
 namespace Orobogenius\Statable;
 
 use Illuminate\Support\Arr;
-use Illuminate\Database\Eloquent\Model;
 use InvalidArgumentException;
+use Illuminate\Database\Eloquent\Model;
 
 trait Statable
 {
@@ -15,7 +15,7 @@ trait Statable
      *
      * @param mixed  $states
      * @return void
-    */
+     */
     public function states($states)
     {
         $this->applyStates($states);
@@ -29,7 +29,7 @@ trait Statable
      * @param mixed  $states
      * @param \Illuminate\Database\Eloquent\Relations\Relation  $relation
      * @return void
-    */
+     */
     protected function applyStates($states, $relation = null)
     {
         $attributes = [];
@@ -45,7 +45,7 @@ trait Statable
         }
 
         $attributes = collect($attributes)->collapse();
-        
+
         $this->transition($attributes->except('with_relations')->toArray(), $relation);
 
         if ($this->shouldTransformRelations($attributes)) {
@@ -59,7 +59,7 @@ trait Statable
     /**
      * @param string  $state
      * @return string
-    */
+     */
     protected function getMethodName($state)
     {
         return 'state'.ucfirst($state);
@@ -73,14 +73,14 @@ trait Statable
      * @return bool
      *
      * @throws InvalidArgumentException
-    */
+     */
     protected function modelHasState($model, $state)
     {
         return tap($this->getMethodName($state), function ($method) use ($model, $state) {
             throw_unless(
                 method_exists($model, $method),
                 InvalidArgumentException::class,
-                sprintf("Unable to locate [%s] state for [%s].", $state, static::class)
+                sprintf('Unable to locate [%s] state for [%s].', $state, static::class)
             );
         });
     }
@@ -91,7 +91,7 @@ trait Statable
      * @param array  $attributes
      * @param \Illuminate\Database\Eloquent\Relations\Relation  $relation
      * @return void
-    */
+     */
     protected function transition($attributes, $relation = null)
     {
         $relation ? $relation->update($attributes)
@@ -103,7 +103,7 @@ trait Statable
      *
      * @param  array  $attributes
      * @return array
-    */
+     */
     protected function expandAttributes($attributes)
     {
         foreach ($attributes as &$attribute) {

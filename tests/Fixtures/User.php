@@ -2,8 +2,8 @@
 
 namespace Orobogenius\Statable\Tests\Fixtures;
 
-use Illuminate\Database\Eloquent\Model;
 use Orobogenius\Statable\Statable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
@@ -14,14 +14,14 @@ class User extends Model
     public function stateAdmin()
     {
         return [
-            'is_admin' => true
+            'is_admin' => true,
         ];
     }
 
     public function stateModerator()
     {
         return [
-            'is_moderator' => true
+            'is_moderator' => true,
         ];
     }
 
@@ -30,7 +30,7 @@ class User extends Model
         return [
             'is_super_admin' => function () {
                 return $this->is_admin && $this->is_moderator;
-            }
+            },
         ];
     }
 }

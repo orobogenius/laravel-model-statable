@@ -2,8 +2,6 @@
 
 namespace Orobogenius\Statable\Concerns;
 
-use Illuminate\Database\Eloquent\Collection;
-
 trait HasRelations
 {
     /**
@@ -11,7 +9,7 @@ trait HasRelations
      *
      * @param  array  $attributes
      * @return bool
-    */
+     */
     protected function shouldTransformRelations($attributes)
     {
         return $this->hasRelations($attributes);
@@ -22,7 +20,7 @@ trait HasRelations
      *
      * @param  array  $attributes
      * @return bool
-    */
+     */
     protected function hasRelations($attributes)
     {
         return isset($attributes['with_relations']);
@@ -34,7 +32,7 @@ trait HasRelations
      * @param array  $relations
      * @param \Illuminate\Database\Eloquent\Model  $model
      * @return void
-    */
+     */
     protected function transformRelations($relations, $model)
     {
         foreach ($relations as $relationship => $states) {
