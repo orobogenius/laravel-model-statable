@@ -36,7 +36,7 @@ to your `composer.json` file, then run `composer install` or `composer udpate`.
 <a name="usage"></a>
 
 ## Usage
-To add states to your laravel models, add the `Orobogenius\Statable\Statable` trait the model.
+To add states to your laravel models, add the `Orobogenius\Statable\Statable` trait to the model.
 ```php
 <?php
 
