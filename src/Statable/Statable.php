@@ -37,7 +37,9 @@ trait Statable
         $model = $relation ? $relation->getModel() : $this;
 
         foreach (Arr::wrap($states) as $state) {
-            if ($method = $this->modelHasState($model, $state)) {
+            $method = $this->getMethodName($state);
+
+            if ($this->modelHasState($model, $method)) {
                 $attributes[] = $this->expandAttributes(
                     $model->$method()
                 );
@@ -76,13 +78,11 @@ trait Statable
      */
     protected function modelHasState($model, $state)
     {
-        return tap($this->getMethodName($state), function ($method) use ($model, $state) {
-            throw_unless(
-                method_exists($model, $method),
-                InvalidArgumentException::class,
-                sprintf('Unable to locate [%s] state for [%s].', $state, static::class)
-            );
-        });
+        return throw_unless(
+            method_exists($model, $state),
+            InvalidArgumentException::class,
+            sprintf('Unable to locate [%s] state for [%s].', $state, get_class($model))
+        );
     }
 
     /**
